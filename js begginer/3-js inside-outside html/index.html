@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--<script src="script.js" defer></script> => if u wanna to make outside file recommended and just repeat code inside script tag below-->
+    <!--note => In the external case, we did not need to use the DOMContentLoaded event because the defer attribute solved the problem for us. We didn't use the defer solution for the internal JavaScript example because defer only works for external scripts.-->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        function createP() {
+          let p = document.createElement("p");
+          p.textContent = "You clicked the button!";
+          document.body.appendChild(p);
+        }
+        const buttons = document.querySelectorAll("button");
+        for (const button of buttons) {
+          button.addEventListener("click", createP);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <button>click me</button>
+    <button>click me</button>
+    <!--<button onclick="createParagraph()">Click me!</button> => if u wanna to make inside tag noy recomended-->
+  </body>
+</html>
